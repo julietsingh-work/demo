@@ -1,4 +1,4 @@
-name: Manual workflow
+name: Manual workflow-Prod
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -9,22 +9,19 @@ jobs:
   deploy:
     # The type of runner that the job will run on  
     runs-on: ubuntu-latest
-    environment: Integration
+    environment: Production
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
-    - name: server selected
-      run: echo "Deploying on ${{ github.event.inputs.server }}"
     - name: checkout
       uses: actions/checkout@v2
-    - name: Deploy to integration
+    - name: Deploy to Production
       uses: garygrossgarten/github-action-scp@release
       with:
           local: ./
-          remote: tmp/${{ github.event.inputs.server }}/public_html
+          remote: tmp/Production/public_html
           host: integration.palm-tech.com
           username: jsingh
           password: ${{ secrets.INT_PASSWORD }}
     - name: Directory Permissions
-      run: chmod -R 777 storage
+      run: chmod -R 777 hello.html
