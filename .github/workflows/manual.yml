@@ -1,0 +1,37 @@
+name: Manual workflow
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      server:
+        description: 'Server to deploy: Intergration or Cloud-C or Production'
+        # Default value if no value is explicitly provided
+        default: 'Intergration'
+        # Input has to be provided for the workflow to run
+        required: true
+        
+jobs: 
+  deploy:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell
+    - name: server selected
+      run: echo "Deploying on ${{ github.event.inputs.server }}"
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: Deploy to integration
+      uses: garygrossgarten/github-action-scp@release
+      with:
+          local: ./
+          remote: /tmp/${{ github.event.inputs.server }}/public_html
+          host: integration.palm-tech.com
+          username: jsingh
+          password: ${{ secrets.JSH_PASSWORD }}
+    - name: Directory Permissions
+      run: chmod -R 777 storage
