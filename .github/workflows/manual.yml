@@ -16,6 +16,7 @@ on:
 jobs: 
   deploy:
     # The type of runner that the job will run on
+    environment: Integration
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -32,6 +33,6 @@ jobs:
           remote: tmp/${{ github.event.inputs.server }}/public_html
           host: integration.palm-tech.com
           username: jsingh
-          password: ${{ secrets.JSH_PASSWORD }}
+          password: ${{ secrets.INT_PASSWORD }}
     - name: Directory Permissions
       run: chmod -R 777 storage
