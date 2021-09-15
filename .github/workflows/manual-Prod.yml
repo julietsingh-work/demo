@@ -24,4 +24,6 @@ jobs:
           username: jsingh
           password: ${{ secrets.PROD_PASSWORD }}
     - name: Directory Permissions
-      run: chmod -R 777 hello.html
+      run: |
+        pwd
+        chmod -R 777 hello.html
