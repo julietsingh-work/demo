@@ -8,8 +8,9 @@ on:
 jobs: 
   deploy:
     # The type of runner that the job will run on  
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
-    inputs:
+  inputs:
       server:
         description: 'Server to deploy: Intergration or Cloud-C or Production'
         # Default value if no value is explicitly provided
