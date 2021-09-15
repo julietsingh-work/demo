@@ -4,11 +4,16 @@ name: Full manual workflow-Production
 # or API.
 on:
   workflow_dispatch:
+    inputs:
+      server:
+        description: 'Secret code to Deploy to Production'
+        # Default value if no value is explicitly provided
+        required: true
         
 jobs: 
   deploy:
     # The type of runner that the job will run on  
-    if: ${{ github.ref == 'refs/heads/main' }}
+    if: ${{ github.ref == 'refs/heads/main' && github.event.inputs.server == '*$YpL%1uS1y$wi3$'}}
     runs-on: ubuntu-latest
    
     # Steps represent a sequence of tasks that will be executed as part of the job
