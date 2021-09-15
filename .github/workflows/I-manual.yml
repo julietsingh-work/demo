@@ -1,16 +1,9 @@
-name: Manual workflow-Integration-Manual
+name: Full manual workflow-Integration
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
   workflow_dispatch:
-   inputs:
-      server:
-        description: 'Server to deploy: Intergration or Cloud-C or Production'
-        # Default value if no value is explicitly provided
-        default: 'Intergration'
-        # Input has to be provided for the workflow to run
-        required: true
         
 jobs: 
   deploy:
