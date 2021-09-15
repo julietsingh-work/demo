@@ -4,20 +4,12 @@ name: Manual workflow
 # or API.
 on:
   workflow_dispatch:
-    # Inputs the workflow accepts.
-    inputs:
-      server:
-        description: 'Server to deploy: Intergration or Cloud-C or Production'
-        # Default value if no value is explicitly provided
-        default: 'Intergration'
-        # Input has to be provided for the workflow to run
-        required: true
         
 jobs: 
   deploy:
-    # The type of runner that the job will run on
-    environment: Integration
+    # The type of runner that the job will run on  
     runs-on: ubuntu-latest
+    environment: Integration
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
