@@ -29,7 +29,7 @@ jobs:
       uses: garygrossgarten/github-action-scp@release
       with:
           local: ./
-          remote: /tmp/${{ github.event.inputs.server }}/public_html
+          remote: tmp/${{ github.event.inputs.server }}/public_html
           host: integration.palm-tech.com
           username: jsingh
           password: ${{ secrets.JSH_PASSWORD }}
