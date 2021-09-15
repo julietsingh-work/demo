@@ -8,7 +8,6 @@ on:
 jobs: 
   deploy:
     # The type of runner that the job will run on  
-    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
   inputs:
       server:
