@@ -16,8 +16,11 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: Integration-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
-          ftp-server: ftp://integration.palm-tech.com/tmp/M-Integration/public_html
-          ftp-username: jsingh
-          ftp-password: ${{ secrets.INT_PASSWORD }}
+          username: 'jsingh'
+          server: 'integration.palm-tech.com'
+          ssh_private_key: ${{ secrets.INT_PASSWORD }}
+          local_path: '.'
+          remote_path: 'tmp/M-Integration/public_html'
+          args: '-o ConnectTimeout=5'
