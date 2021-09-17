@@ -18,6 +18,6 @@ jobs:
       - name: Integration-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
-          ftp-server: ftp://integration.palm-tech.com/tmp/FTP-test
+          ftp-server: ftp://integration.palm-tech.com/tmp/M-Integration/public_html
           ftp-username: jsingh
           ftp-password: ${{ secrets.INT_PASSWORD }}
