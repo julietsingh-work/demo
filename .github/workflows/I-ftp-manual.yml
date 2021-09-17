@@ -23,4 +23,4 @@ jobs:
           ftp-server: sftp://integration.palm-tech.com:2222/
           ftp-username: jsingh
           ftp-password: ${{ secrets.INT_PASSWORD }}
-          local-dir: tmp/
+          local-dir: /tmp/
