@@ -22,5 +22,5 @@ jobs:
         with:
           ftp-server: integration.palm-tech.com
           ftp-username: jsingh
-          ftppassword: ${{ secrets.ftp_password }}
+          ftp-password: ${{ secrets.ftp_password }}
           local-dir: tmp/
