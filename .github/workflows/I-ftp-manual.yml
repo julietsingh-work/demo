@@ -18,9 +18,9 @@ jobs:
         with:
           fetch-depth: 2
       - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
-          ftp-server: sftp://integration.palm-tech.com/
-          ftp-username: jsingh
-          ftp-password: ${{ secrets.INT_PASSWORD }}
-          local-dir: /tmp/
+          server: integration.palm-tech.com
+          username: jsingh
+          password: ${{ secrets.INT_PASSWORD }}
+          
