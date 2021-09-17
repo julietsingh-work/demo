@@ -15,12 +15,12 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - name: Integration-Deploy-Action
-        uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
-          username: 'jsingh'
-          server: 'integration.palm-tech.com'
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          local_path: '.'
-          remote_path: 'tmp/M-Integration/public_html'
-          args: '-o ConnectTimeout=5'
+          fetch-depth: 2
+      - name: FTP Deploy to WP Engine (Staging)
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+          ftp-server: sftp://integration.palm-tech.com:2222/
+          ftp-username: jsingh
+          ftp-password: ${{ secrets.INT_PASSWORD }}
+          local-dir: tmp/
