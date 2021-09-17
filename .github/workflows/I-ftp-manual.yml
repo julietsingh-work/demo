@@ -1,0 +1,23 @@
+name: Beta manual workflow-Integration
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+        
+jobs: 
+  deploy:
+    # The type of runner that the job will run on  
+    if: ${{ github.ref == 'refs/heads/Develop' }}
+    runs-on: ubuntu-latest
+   
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: Integration-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+          ftp-server: ftp://integration.palm-tech.com/tmp/FTP-test
+          ftp-username: jsingh
+          ftp-password: ${{ secrets.INT_PASSWORD }}
