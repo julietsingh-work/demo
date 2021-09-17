@@ -17,10 +17,10 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 2
-      - name: FTP Deploy to WP Engine (Staging)
+      - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
-          ftp-server: sftp://integration.palm-tech.com:2222/
+          ftp-server: sftp://integration.palm-tech.com/
           ftp-username: jsingh
           ftp-password: ${{ secrets.INT_PASSWORD }}
           local-dir: /tmp/
