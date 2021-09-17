@@ -20,7 +20,7 @@ jobs:
         with:
           username: 'jsingh'
           server: 'integration.palm-tech.com'
-          ssh_private_key: ${{ secrets.INT_PASSWORD }}
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           local_path: '.'
           remote_path: 'tmp/M-Integration/public_html'
           args: '-o ConnectTimeout=5'
