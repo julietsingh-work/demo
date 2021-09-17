@@ -22,5 +22,5 @@ jobs:
         with:
           server: integration.palm-tech.com
           username: jsingh
-          password: ${{ secrets.INT_PASSWORD }}
+          password: ${{ secrets.ftp_password }}
           
