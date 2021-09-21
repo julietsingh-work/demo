@@ -22,7 +22,7 @@ jobs:
         with:
           host: integration.palm-tech.com
           username: jsingh
-          key: ${{ secrets.SSH_PRIVATE_KEY }}  
+          key: ${{ secrets.INT_PASSWORD }}  
           source: "./*"
           target: "./tmp/"
 
