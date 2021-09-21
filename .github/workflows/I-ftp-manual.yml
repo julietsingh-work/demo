@@ -23,6 +23,7 @@ jobs:
           ftp-server: sftp://integration.palm-tech.com:22/tmp
           ftp-username: root
           ftp-password: ${{ secrets.ROOT_PASSWORD }}  
+          git-ftp-args: --dry-run --insecure
           source: "."
           target: "/tmp/test/"
 
