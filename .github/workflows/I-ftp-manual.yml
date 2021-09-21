@@ -21,8 +21,8 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
           ftp-server: ftp://integration.palm-tech.com/tmp
-          ftp-username: jsingh
-          ftp-password: ${{ secrets.JSH_PASSWORD }}  
-          source: "./*"
-          target: "./tmp/"
+          ftp-username: root
+          ftp-password: ${{ secrets.ROOT_PASSWORD }}  
+          source: "."
+          target: "/tmp/test/"
 
