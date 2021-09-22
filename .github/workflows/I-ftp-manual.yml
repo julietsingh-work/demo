@@ -24,16 +24,6 @@ jobs:
           username: root  
           password: ${{ secrets.ROOT_PASSWORD }}
           port: 22
-          source: "."
-          target: "/tmp/test/"
+          script: 'cd /tmp/test && ./server_deploy.sh'
     
-      - name: FTP-Deploy-Action
-        uses: SamKirkland/FTP-Deploy-Action@3.1.1
-        with:
-          ftp-server: sftp://integration.palm-tech.com:22/tmp
-          ftp-username: root
-          ftp-password: ${{ secrets.ROOT_PASSWORD }}  
-          git-ftp-args: --dry-run --insecure
-          source: "."
-          target: "/tmp/test/"
-
+    
